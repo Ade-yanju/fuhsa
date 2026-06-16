@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --fuhsa-navy: #0b1c30;
+  --fuhsa-gold: #dda83a;
+  --fuhsa-teal: #5cb8a5;
 }
 
 @theme inline {
