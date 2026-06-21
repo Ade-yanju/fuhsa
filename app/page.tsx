@@ -118,7 +118,7 @@ export default function FuhsaAceternityLanding() {
       query.includes("apply") ||
       query.includes("post utme")
     ) {
-      return "Admissions for the 2025/2026 session are currently open! You need a minimum JAMB score of 220. Click 'Admission' in the top menu to start your Post-UTME screening.";
+      return "Admissions for the 2026/2027 session are currently open! You need a minimum JAMB score of 220. Click 'Admission' in the top menu to start your Post-UTME screening.";
     }
     if (
       query.includes("course") ||

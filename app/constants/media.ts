@@ -20,7 +20,9 @@ export function getDirectLink(url: string): string {
     const match =
       url.match(/\/d\/([a-zA-Z0-9_-]+)/) || url.match(/id=([a-zA-Z0-9_-]+)/);
     if (match && match[1]) {
-      return `https://drive.google.com/uc?export=download&id=${match[1]}`;
+      // Using the lh3.googleusercontent.com endpoint is much more reliable for web viewing (images/videos)
+      // and behaves more like a CDN compared to the 'uc?export=download' endpoint.
+      return `https://lh3.googleusercontent.com/d/${match[1]}`;
     }
   }
   return url;
@@ -34,7 +36,7 @@ export const MEDIA_URLS = {
 
   // Slide Images (Hero Section)
   slide1:
-    "https://drive.google.com/file/d/1OA1PkuV0gaaUXcgeIxMp0ggTE4ja4oVA/view?usp=drive_linkg",
+    "https://drive.google.com/file/d/1OA1PkuV0gaaUXcgeIxMp0ggTE4ja4oVA/view?usp=drive_link",
   slide2:
     "https://drive.google.com/file/d/1r7RCO1FGCgyq5oDCuDwspmYCz_B4BPLF/view?usp=drive_link",
   slide3:
