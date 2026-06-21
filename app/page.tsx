@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, Sparkles, Bot, Menu } from "lucide-react";
+import { RESOLVED_MEDIA_URLS } from "./constants/media";
 
 type Event = {
   id: number;
@@ -34,7 +35,7 @@ const fallbackNewsData: News[] = [
       "Official welcome ceremony and orientation schedule released for all faculties...",
     date: "Oct 12, 2025",
     readTime: "5 min read",
-    img: "/announcement.jpg",
+    img: RESOLVED_MEDIA_URLS.announcement,
   },
   {
     id: 2,
@@ -44,7 +45,7 @@ const fallbackNewsData: News[] = [
       "A breakthrough study published in the Global Health Journal by our Pharmaceutical Sciences team...",
     date: "Oct 08, 2025",
     readTime: "8 min read",
-    img: "/lab.jpg",
+    img: RESOLVED_MEDIA_URLS.lab,
   },
   {
     id: 3,
@@ -402,11 +403,11 @@ export default function FuhsaAceternityLanding() {
 
         .hero-section { position: relative; height: 100vh; display: flex; align-items: center; padding: 0 5%; overflow: hidden; background: var(--fuhsa-navy); }
         .slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: kenBurns 24s infinite; }
-        .slide-1 { background: url('/slide1.jpg') center/cover no-repeat; animation-delay: 0s; }
-        .slide-2 { background: url('/slide2.jpg') center/cover no-repeat; animation-delay: 8s; }
-        .slide-3 { background: url('/slide3.jpg') center/cover no-repeat; animation-delay: 16s; }
-        .slide-4 { background: url('/slide4.jpg') center/cover no-repeat; animation-delay: 24s; }
-        .slide-5 { background: url('/slide5.jpg') center/cover no-repeat; animation-delay: 32s; }
+        .slide-1 { background: url('${RESOLVED_MEDIA_URLS.slide1}') center/cover no-repeat; animation-delay: 0s; }
+        .slide-2 { background: url('${RESOLVED_MEDIA_URLS.slide2}') center/cover no-repeat; animation-delay: 8s; }
+        .slide-3 { background: url('${RESOLVED_MEDIA_URLS.slide3}') center/cover no-repeat; animation-delay: 16s; }
+        .slide-4 { background: url('${RESOLVED_MEDIA_URLS.slide4}') center/cover no-repeat; animation-delay: 24s; }
+        .slide-5 { background: url('${RESOLVED_MEDIA_URLS.slide5}') center/cover no-repeat; animation-delay: 32s; }
         .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,28,48,0.95) 0%, rgba(11,28,48,0.7) 50%, rgba(11,28,48,0.3) 100%); z-index: 1; }
 
         .hero-content { position: relative; z-index: 10; max-width: 850px; color: #fff; margin-top: 40px; animation: fadeUp 1s ease forwards; }
@@ -425,7 +426,7 @@ export default function FuhsaAceternityLanding() {
         .mv-title { font-weight: 700; color: var(--fuhsa-navy); margin: 0 0 12px 0; font-size: 1.1rem; }
 
         .about-image-wrapper { position: relative; perspective: 1000px; width: 100%; }
-        .about-image { width: 100%; height: 550px; border-radius: 12px; background-image: url('./labb.jpg'); background-size: cover; background-position: center; box-shadow: 0 30px 60px rgba(0,0,0,0.15); transition: transform 0.5s; transform: rotateY(-5deg); }
+        .about-image { width: 100%; height: 550px; border-radius: 12px; background-image: url('${RESOLVED_MEDIA_URLS.labb}'); background-size: cover; background-position: center; box-shadow: 0 30px 60px rgba(0,0,0,0.15); transition: transform 0.5s; transform: rotateY(-5deg); }
         .about-image-wrapper:hover .about-image { transform: rotateY(0deg); }
         .about-badge { position: absolute; bottom: -30px; left: -30px; background: var(--fuhsa-gold); padding: 40px; border-radius: 12px; color: var(--fuhsa-navy); box-shadow: 0 20px 40px rgba(221, 168, 58, 0.3); z-index: 2; }
         .about-badge h4 { margin: 0; font-size: 3rem; font-weight: 700; line-height: 1; font-family: 'Inter', sans-serif; }
@@ -494,7 +495,7 @@ export default function FuhsaAceternityLanding() {
         .poster-motto { color: var(--fuhsa-gold); font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; margin-top: 20px; letter-spacing: 0.05em; }
 
         .tour-section { background: var(--bg-light); text-align: center; }
-        .tour-container { position: relative; width: 100%; height: 65vh; min-height: 450px; background: url('./gate.jpg') center/cover; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1); cursor: pointer; }
+        .tour-container { position: relative; width: 100%; height: 65vh; min-height: 450px; background: url('${RESOLVED_MEDIA_URLS.gate}') center/cover; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1); cursor: pointer; }
         .tour-container::before { content: ''; position: absolute; inset: 0; background: rgba(11,28,48,0.4); transition: 0.4s; }
         .tour-container:hover::before { background: rgba(11,28,48,0.2); }
         .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; border-radius: 50%; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.5); transition: 0.3s; z-index: 10; }
@@ -761,7 +762,7 @@ export default function FuhsaAceternityLanding() {
           </button>
           <div className="relative w-full max-w-6xl aspect-video bg-black rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.6)] border border-white/10 animate-in zoom-in-95 duration-500 delay-150 fill-mode-both">
             <video
-              src="/fuhsa.mp4"
+              src={RESOLVED_MEDIA_URLS.fuhsaVideo}
               controls
               autoPlay
               playsInline
@@ -793,7 +794,7 @@ export default function FuhsaAceternityLanding() {
         <div className="logo-wrap">
           <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-white border border-white/10 shadow-sm relative shrink-0">
             <img
-              src="/fuhsa-logo.png"
+              src={RESOLVED_MEDIA_URLS.logo}
               alt="FUHSA Logo"
               className="w-full h-full object-cover relative z-10"
               onError={(e) => {
@@ -1084,7 +1085,7 @@ export default function FuhsaAceternityLanding() {
         <div className="vc-grid">
           <div className="vc-image-wrap">
             <img
-              src="/vcfuhsa.png"
+              src={RESOLVED_MEDIA_URLS.vcImage}
               alt="Prof. Bala Muhammad Audu"
               className="vc-image"
             />
@@ -1637,7 +1638,7 @@ export default function FuhsaAceternityLanding() {
             <div className="footer-logo">
               <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-white shrink-0">
                 <img
-                  src="/fuhsa-logo.png"
+                  src={RESOLVED_MEDIA_URLS.logo}
                   alt="FUHSA Logo"
                   className="w-full h-full object-cover"
                   onError={(e) => {
