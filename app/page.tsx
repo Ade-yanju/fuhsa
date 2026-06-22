@@ -24,6 +24,7 @@ type News = {
   date: string;
   readTime: string;
   img: string;
+  link: string;
 };
 
 const fallbackNewsData: News[] = [
@@ -36,6 +37,7 @@ const fallbackNewsData: News[] = [
     date: "Oct 12, 2025",
     readTime: "5 min read",
     img: RESOLVED_MEDIA_URLS.announcement,
+    link: "#",
   },
   {
     id: 2,
@@ -46,6 +48,7 @@ const fallbackNewsData: News[] = [
     date: "Oct 08, 2025",
     readTime: "8 min read",
     img: RESOLVED_MEDIA_URLS.lab,
+    link: "#",
   },
   {
     id: 3,
@@ -56,6 +59,7 @@ const fallbackNewsData: News[] = [
     date: "Sep 25, 2025",
     readTime: "3 min read",
     img: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80",
+    link: "#",
   },
 ];
 
@@ -1033,7 +1037,7 @@ export default function FuhsaAceternityLanding() {
             >
               <span className="btn-aceternity-inner">Apply Now &rarr;</span>
             </Link>
-            <Link href="/programs" className="btn-outline">
+            <Link href="https://fuhsa.admissions.cloud/" className="btn-outline">
               Explore Programs
             </Link>
           </div>
@@ -1558,9 +1562,9 @@ export default function FuhsaAceternityLanding() {
               Stay updated with the heartbeat of FUHSA.
             </p>
           </div>
-          <a href="/news" className="view-link">
+          <span className="view-link" style={{ cursor: 'default' }}>
             View All Updates &rarr;
-          </a>
+          </span>
         </div>
         {loading ? (
           <div className="news-grid">
@@ -1581,9 +1585,8 @@ export default function FuhsaAceternityLanding() {
         ) : (
           <div className="news-grid">
             {newsData.map((item) => (
-              <Link
+              <div
                 key={item.id}
-                href={`/news/${item.id}`}
                 className="glare-card"
                 style={{ padding: 0 }}
               >
@@ -1625,7 +1628,7 @@ export default function FuhsaAceternityLanding() {
                     <span>{item.readTime || "Read More"}</span>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         )}
